@@ -63,7 +63,7 @@
 .profileButton {
 	padding: 24px 32px;
 	border-radius: 10px;
-	outline: none;
+	outline: 0;
 	border: 0;
 	width: 100%;
 	text-decoration: none;
