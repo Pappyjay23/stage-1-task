@@ -1,0 +1,125 @@
+:root {
+	--darkGray: #101828;
+	--lightGray: #eaecf0;
+  --gray500: #667085;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
+}
+.profileContainer {
+	padding: 2rem 1rem;
+}
+.profileDetails {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2.5rem;
+}
+.profileDetail {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 1rem;
+}
+.profileImageContainer {
+	height: 88px;
+	width: 88px;
+	margin-bottom: 0.8rem;
+}
+.profileImage {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+.profileUsername {
+	font-weight: 700;
+	font-size: 1.2rem;
+}
+.menuButton {
+	position: absolute;
+	right: 0;
+	top: 0;
+  cursor: pointer;
+}
+.menuButton img {
+	height: 35px;
+}
+.menuButtonMobile {
+	display: flex;
+}
+.shareButton {
+	display: none;
+}
+.profileButton {
+	padding: 24px 32px;
+	border-radius: 10px;
+	outline: none;
+	border: 0;
+	background-color: var(--lightGray);
+	width: 100%;
+  text-decoration: none;
+	color: var(--darkGray);
+	font-weight: 600;
+  cursor: pointer;
+}
+.profileButtonContainer {
+	margin-bottom: 1rem;
+}
+.socialLinks{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
+  display: none;
+}
+.socialLinks img{
+  margin: 0 1rem;
+}
+.footerContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--lightGray);
+  display: none;
+}
+.zuriLogo, .I4GLogo{
+  height: 25px;
+}
+.footerDesc{
+  font-size: 70%;
+  color: var(--gray500);
+}
+
+@media screen and (min-width: 1024px) {
+  .profileContainer {
+    padding: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .profileLinks{
+    margin-bottom: 2rem;
+  }
+	.menuButtonMobile {
+		display: none;
+	}
+	.shareButton {
+		display: flex;
+	}
+  .menuButton {
+    position: absolute;
+    top: 0;
+    right: 25%;
+  }
+  .socialLinks{
+    display: flex;  
+  }
+  .footerContainer{
+    display: flex;
+  }
+}
