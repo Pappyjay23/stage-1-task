@@ -15,9 +15,10 @@ const Profile = () => {
 			<div className='profileDetails'>
 				<div className='profileDetail'>
 					<div className='profileImageContainer'>
-						<img className='profileImage' src={ProfileImage} alt='Profile' />
+						<img id="profile__img" className='profileImage' src={ProfileImage} alt='Profile' />
 					</div>
-					<p className='profileUsername'>Annette Black</p>
+					<p id="twitter" className='profileUsername'>@_pappy_jay_</p>
+					<p id="slack" className='profileUsername2'>@pappyjay23</p>
 				</div>
 				<div className='menuButton'>
 					<img className='menuButtonMobile' src={menuButton} alt='MenuButton' />
@@ -27,15 +28,15 @@ const Profile = () => {
 			<div className='profileLinks'>
 				{ProfileLinksData.map((data, index) => (
 					<div key={index} className='profileButtonContainer'>
-						<ProfileButton link={data.linkTo}>{data.name}</ProfileButton>
+						<ProfileButton buttonId={data.id} link={data.linkTo}>{data.name}</ProfileButton>
 					</div>
 				))}
 			</div>
 			<div className='socialLinks'>
-				<Link to=''>
+				<Link to='' target='_blank'>
 					<img src={slackLogo} alt='slackLogo' />
 				</Link>
-				<Link to=''>
+				<Link to='' target='_blank'>
 					<img src={githubLogo} alt='githubLogo' />
 				</Link>
 			</div>

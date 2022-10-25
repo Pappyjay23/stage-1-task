@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProfileButton = ({ children, link }) => {
+const ProfileButton = ({ children, link, buttonId }) => {
 	return (
-		<Link to={link}>
-			<button className='profileButton'>{children}</button>
+		<Link to={link} target="_blank">
+			<button id={buttonId} className='profileButton'>{children}</button>
 		</Link>
 	);
 };

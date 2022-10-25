@@ -1,7 +1,8 @@
 :root {
 	--darkGray: #101828;
 	--lightGray: #eaecf0;
-  --gray500: #667085;
+	--lightGrayHover: #D0D5DD;
+	--gray500: #667085;
 }
 
 * {
@@ -36,15 +37,19 @@
 	object-fit: cover;
 	border-radius: 50%;
 }
-.profileUsername {
+.profileUsername, .profileUsername2 {
 	font-weight: 700;
 	font-size: 1.2rem;
+}
+.profileUsername2 {
+	margin-top: .5rem;
+	display: none;
 }
 .menuButton {
 	position: absolute;
 	right: 0;
 	top: 0;
-  cursor: pointer;
+	cursor: pointer;
 }
 .menuButton img {
 	height: 35px;
@@ -60,66 +65,72 @@
 	border-radius: 10px;
 	outline: none;
 	border: 0;
-	background-color: var(--lightGray);
 	width: 100%;
-  text-decoration: none;
+	text-decoration: none;
 	color: var(--darkGray);
 	font-weight: 600;
-  cursor: pointer;
+	cursor: pointer;
+	background-color: var(--lightGray);
+	transition: all 0.3s ease;
+}
+.profileButton:hover{
+	background-color: var(--lightGrayHover);
+
 }
 .profileButtonContainer {
 	margin-bottom: 1rem;
 }
-.socialLinks{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 4rem;
-  display: none;
+.socialLinks {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 4rem;
+	display: none;
 }
-.socialLinks img{
-  margin: 0 1rem;
+.socialLinks img {
+	margin: 0 1rem;
 }
-.footerContainer{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--lightGray);
-  display: none;
+.footerContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--lightGray);
+	display: none;
 }
-.zuriLogo, .I4GLogo{
-  height: 25px;
+.zuriLogo,
+.I4GLogo {
+	height: 25px;
 }
-.footerDesc{
-  font-size: 70%;
-  color: var(--gray500);
+.footerDesc {
+	font-size: 70%;
+	color: var(--gray500);
 }
 
 @media screen and (min-width: 1024px) {
-  .profileContainer {
-    padding: 3rem;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  .profileLinks{
-    margin-bottom: 2rem;
-  }
+	.profileContainer {
+		padding: 3rem;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+	.profileLinks {
+		margin-bottom: 2rem;
+	}
 	.menuButtonMobile {
 		display: none;
 	}
 	.shareButton {
 		display: flex;
 	}
-  .menuButton {
-    position: absolute;
-    top: 0;
-    right: 25%;
-  }
-  .socialLinks{
-    display: flex;  
-  }
-  .footerContainer{
-    display: flex;
-  }
+	.menuButton {
+		position: absolute;
+		top: 0;
+		right: 25%;
+	}
+	.socialLinks {
+		display: flex;
+	}
+	.footerContainer {
+		display: flex;
+	}
 }
