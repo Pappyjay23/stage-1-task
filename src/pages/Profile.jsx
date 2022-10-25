@@ -33,10 +33,10 @@ const Profile = () => {
 				))}
 			</div>
 			<div className='socialLinks'>
-				<Link to='' target='_blank'>
+				<div>
 					<img src={slackLogo} alt='slackLogo' />
-				</Link>
-				<Link to='' target='_blank'>
+				</div>
+				<Link to='//github.com/Pappyjay23/stage-1-task' target='_blank'>
 					<img src={githubLogo} alt='githubLogo' />
 				</Link>
 			</div>
