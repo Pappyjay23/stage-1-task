@@ -1,7 +1,7 @@
 :root {
 	--darkGray: #101828;
 	--lightGray: #eaecf0;
-	--lightGrayHover: #D0D5DD;
+	--lightGrayHover: #d0d5dd;
 	--gray500: #667085;
 }
 
@@ -11,6 +11,9 @@
 	box-sizing: border-box;
 	font-family: "Inter", sans-serif;
 }
+
+/* PROFILE BEGINS */
+
 .profileContainer {
 	padding: 2rem 1rem;
 }
@@ -37,12 +40,13 @@
 	object-fit: cover;
 	border-radius: 50%;
 }
-.profileUsername, .profileUsername2 {
+.profileUsername,
+.profileUsername2 {
 	font-weight: 700;
 	font-size: 1.2rem;
 }
 .profileUsername2 {
-	margin-top: .5rem;
+	margin-top: 0.5rem;
 	display: none;
 }
 .menuButton {
@@ -73,9 +77,8 @@
 	background-color: var(--lightGray);
 	transition: all 0.3s ease;
 }
-.profileButton:hover{
+.profileButton:hover {
 	background-color: var(--lightGrayHover);
-
 }
 .profileButtonContainer {
 	margin-bottom: 1rem;
@@ -90,21 +93,37 @@
 .socialLinks img {
 	margin: 0 1rem;
 }
+
+/* PROFILE ENDS */
+
+/* FOOTER BEGINS */
 .footerContainer {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	flex-direction: column;
+	align-items: start;
+	gap: 10px;
 	padding-top: 1.5rem;
 	border-top: 1px solid var(--lightGray);
-	display: none;
+	/* display: none; */
 }
 .zuriLogo,
 .I4GLogo {
-	height: 25px;
+	height: 15px;
 }
 .footerDesc {
-	font-size: 70%;
+	font-size: 60%;
 	color: var(--gray500);
+}
+
+/* FOOTER ENDS */
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 768px) {
+	.footerContainer {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
 }
 
 @media screen and (min-width: 1024px) {
@@ -130,7 +149,11 @@
 	.socialLinks {
 		display: flex;
 	}
-	.footerContainer {
-		display: flex;
+	.zuriLogo,
+	.I4GLogo {
+		height: 25px;
+	}
+	.footerDesc {
+		font-size: 70%;
 	}
 }

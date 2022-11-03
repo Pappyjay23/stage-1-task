@@ -29,4 +29,9 @@ export const ProfileLinksData = [
 		linkTo: "//books.zuri.team/design-rules",
 		id: "book__design",
 	},
+	{
+		name: "Contact Me",
+		linkTo: "/contact",
+		id: "contact",
+	},
 ];
