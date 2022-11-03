@@ -28,7 +28,7 @@ const Profile = () => {
 			<div className='profileLinks'>
 				{ProfileLinksData.map((data, index) => (
 					<div key={index} className='profileButtonContainer'>
-						<ProfileButton buttonId={data.id} link={data.linkTo}>{data.name}</ProfileButton>
+						<ProfileButton buttonId={data.id} link={data.linkTo} rdct={data.rdct}>{data.name}</ProfileButton>
 					</div>
 				))}
 			</div>
