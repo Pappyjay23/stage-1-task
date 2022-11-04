@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import { formLogic } from "../data/ContactFormLogic";
 
@@ -11,7 +11,6 @@ const Contact = () => {
 	});
 
 	const [errors, setErrors] = useState({});
-	const [submitted, setSubmitted] = useState(false);
 	const [successMessage, setsuccessMessage] = useState("");
 
 	const checkErrors = () => {
@@ -19,18 +18,23 @@ const Contact = () => {
 	};
 	const checkToSubmit = () => {
 		if (Object.values(errors).length === 0) {
-			setSubmitted(true);
+			return true;
+		} else {
+			return false;
 		}
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		checkErrors();
-		checkToSubmit();
-		submitted && setsuccessMessage("Sucessful submission!");
-		submitted &&
+		if (Object.values(errors).length === 0) {
+			setsuccessMessage("Sucessful submission!");
+		}
+	};
+
+	useEffect(() => {
+		if (successMessage && checkToSubmit()) {
 			setTimeout(() => {
-				setsuccessMessage("Sucessful submission!");
 				setFormValues({
 					...formValues,
 					firstName: "",
@@ -39,10 +43,12 @@ const Contact = () => {
 					message: "",
 				});
 				setsuccessMessage("");
-				setSubmitted(false);
 				setErrors({});
-			}, 2000);
-	};
+			}, 1000);
+		}
+
+	})
+	
 
 	return (
 		<>
@@ -53,7 +59,7 @@ const Contact = () => {
 						<p className='contactDesc'>
 							Hi there, contact me to ask anything you have in mind.
 						</p>
-						{successMessage && (
+						{successMessage && checkToSubmit() && (
 							<p className='successMessage'>{successMessage}</p>
 						)}
 						<form onSubmit={handleSubmit} className='formContainer'>
@@ -140,7 +146,7 @@ const Contact = () => {
 									contact you.
 								</label>
 							</div>
-							<button className='contactButton'>Send message</button>
+							<button className={checkToSubmit() ? 'contactButton' : 'contactButtonDisabled'}>Send message</button>
 						</form>
 					</div>
 				</div>
